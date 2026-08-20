@@ -25,14 +25,14 @@ const DEFAULT_THEME_CONFIG = {
         textMutedColor: "#a1a1aa"
     },
     light: {
-        primaryColor: "#8c6716",      /* Burnished Antique Gold */
-        secondaryColor: "#b8913b",
-        backgroundColor: "#f4f0e8",   /* Warm Champagne Cashmere */
-        surfaceColor: "#faf7f2",      /* Silk Ivory */
-        surfaceLightColor: "#eae5db",
-        accentColor: "#8c6716",
-        textColor: "#1c1917",         /* Deep Velvet Espresso */
-        textMutedColor: "#57524c"     /* Warm Stone */
+        primaryColor: "#b45309",      /* Rich Antique Gold */
+        secondaryColor: "#d97706",
+        backgroundColor: "#f8fafc",   /* Crisp Luminous Canvas */
+        surfaceColor: "#ffffff",      /* Pure Crisp White */
+        surfaceLightColor: "#f1f5f9",
+        accentColor: "#b45309",
+        textColor: "#0f172a",         /* Deep Slate 900 */
+        textMutedColor: "#475569"     /* Slate 600 */
     }
 };
 
@@ -308,13 +308,13 @@ function applyTheme(cfg) {
     htmlEl.classList.add(mode);
 
     // Luxury Champagne / Bronze Gold
-    const goldColor = mode === 'dark' ? "#c5a059" : "#8c6716";
-    const goldRgb = mode === 'dark' ? "197, 160, 89" : "140, 103, 22";
-    const bgColor = mode === 'dark' ? "#000000" : "#f4f0e8";
-    const surfaceColor = mode === 'dark' ? "#0f0f12" : "#faf7f2";
-    const cardColor = mode === 'dark' ? "#0d0d10" : "#faf7f2";
-    const textColor = mode === 'dark' ? "#f7f7f9" : "#1c1917";
-    const textMuted = mode === 'dark' ? "#a1a1aa" : "#57524c";
+    const goldColor = mode === 'dark' ? "#c5a059" : "#b45309";
+    const goldRgb = mode === 'dark' ? "197, 160, 89" : "180, 83, 9";
+    const bgColor = mode === 'dark' ? "#000000" : "#f8fafc";
+    const surfaceColor = mode === 'dark' ? "#0f0f12" : "#ffffff";
+    const cardColor = mode === 'dark' ? "#0d0d10" : "#ffffff";
+    const textColor = mode === 'dark' ? "#f7f7f9" : "#0f172a";
+    const textMuted = mode === 'dark' ? "#a1a1aa" : "#475569";
 
     htmlEl.style.setProperty("--color-gold", goldColor);
     htmlEl.style.setProperty("--color-accent", goldColor);
@@ -363,6 +363,7 @@ function renderAll() {
     renderCustomSections();
     renderDocuments();
     renderContact();
+    initAnimations();
 }
 
 function renderHero() {
@@ -1030,6 +1031,48 @@ window.moveItem = (arrName, idx, dir) => {
     renderAdminForms();
     renderAll();
 };
+
+function initAnimations() {
+    // Scroll reveal observer
+    const revealElements = document.querySelectorAll(
+        '.section, .timeline-entry, .project-item-card, .skill-box, .research-entry-card, .doc-entry-card, .luxury-contact-card'
+    );
+
+    revealElements.forEach(el => {
+        if (!el.classList.contains('reveal-on-scroll')) {
+            el.classList.add('reveal-on-scroll');
+        }
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-revealed');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.08,
+        rootMargin: '0px 0px -30px 0px'
+    });
+
+    revealElements.forEach(el => observer.observe(el));
+
+    // Card Mouse Spotlight Aura
+    const cards = document.querySelectorAll(
+        '.project-item-card, .timeline-entry, .skill-box, .research-entry-card, .doc-entry-card, .about-details-card, .portrait-card'
+    );
+
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+        });
+    });
+}
 
 // Start Immediately
 if (document.readyState === 'loading') {
