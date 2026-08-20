@@ -1,206 +1,345 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahmad Bilal Zaidi | Portfolio</title>
+    <title>Ahmad Bilal Zaidi — Software Engineer</title>
+    <meta name="description" content="Ahmad Bilal Zaidi — Software Engineer specializing in AWS Cloud-Native Backend, Serverless Microservices, and AI RAG Systems.">
 
-    <!-- Google Fonts: Inter for UI, Roboto Mono for code/dates -->
+    <!-- Luxury Typography: Cormorant Garamond (Editorial Serif) + Plus Jakarta Sans (Modern Geometric) + JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Roboto+Mono:wght@400;500&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <!-- Loading Overlay -->
-    <div id="loading-overlay">
-        <span class="loader"></span>
-        <p class="loading-text">INITIALIZING SYSTEM...</p>
-    </div>
+    <!-- Subtle Ambient Luxury Lighting -->
+    <div class="luxury-ambient-mesh" aria-hidden="true"></div>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container container">
-            <a href="#" class="logo" id="nav-logo">ABZ</a>
-            <div class="nav-menu">
-                <!-- Added 'active' logic requires JS, assuming script.js handles the click on hamburger -->
-                <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#documents">Docs</a></li>
-                    <li><a href="#contact">Contact</a></li>
+    <!-- Navigation Bar -->
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="#hero" class="brand-logo" id="nav-logo">
+                <span class="brand-name">Ahmad Bilal Zaidi</span>
+                <span class="brand-sub">Software Engineer</span>
+            </a>
+
+            <nav class="nav-links-wrap" id="nav-links-wrap">
+                <ul class="nav-list">
+                    <li><a href="#about" class="nav-item">About</a></li>
+                    <li><a href="#experience" class="nav-item">Experience</a></li>
+                    <li><a href="#projects" class="nav-item">Projects</a></li>
+                    <li><a href="#skills" class="nav-item">Expertise</a></li>
+                    <li><a href="#research" class="nav-item">Research</a></li>
+                    <li><a href="#contact" class="nav-item">Contact</a></li>
                 </ul>
-                <button id="theme-toggle" class="theme-toggle" title="Switch Theme">
-                    <i class="fa-solid fa-moon"></i>
+            </nav>
+
+            <div class="nav-right">
+                <button id="theme-toggle" class="theme-switch" title="Toggle Theme" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-circle-half-stroke"></i>
                 </button>
-                <a href="#" id="admin-trigger" class="admin-lock"><i class="fa-solid fa-lock"></i></a>
-                <div class="hamburger">
+                <a href="#contact" class="btn btn-luxury-pill hide-mobile">Get in Touch</a>
+                <a href="#" id="admin-trigger" class="admin-icon-btn" title="Admin Portal" aria-label="Admin Portal">
+                    <i class="fa-solid fa-lock"></i>
+                </a>
+                <button class="menu-toggle" id="menu-toggle-btn" aria-label="Open Navigation Menu">
                     <i class="fa-solid fa-bars"></i>
-                </div>
+                </button>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero-section">
-        <div class="container hero-content hidden-section">
-            <div class="hero-text">
-                <p class="accent-text">Hello, my name is</p>
-                <h1 id="hero-name">Loading...</h1>
-                <h2 id="hero-role">Loading...</h2>
-                <p id="hero-bio" class="hero-bio">Loading...</p>
-                <div class="hero-btns">
-                    <a href="#projects" class="btn btn-primary">View Projects</a>
-                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-overlay" class="mobile-overlay"></div>
+
+    <main id="main">
+        <!-- Hero Section (Luxury & Editorial) -->
+        <section id="hero" class="hero">
+            <div class="container hero-inner">
+                <div class="hero-content">
+                    <div class="hero-eyebrow">
+                        <span class="eyebrow-line"></span>
+                        <span class="eyebrow-text">Software Engineer &bull; Cloud & AI Backend</span>
+                    </div>
+
+                    <h1 class="hero-title" id="hero-name">
+                        Ahmad Bilal <span class="gold-gradient-text">Zaidi</span>
+                    </h1>
+
+                    <p class="hero-lead" id="hero-bio">
+                        Architecting resilient cloud-native healthcare infrastructure on AWS and engineering intelligent AI & RAG retrieval systems.
+                    </p>
+
+                    <div class="hero-ctas">
+                        <a href="#projects" class="btn btn-luxury-primary">
+                            <span>Explore Selected Work</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                        <a href="#contact" class="btn btn-luxury-outline">
+                            <span>Get in Touch</span>
+                        </a>
+                        <a href="https://drive.google.com/file/d/1bUVP43S7383pAfQVtBMrsy5cDTeItsmP/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-luxury-text" id="hero-resume-btn">
+                            <i class="fa-regular fa-file-pdf"></i> Curriculum Vitae
+                        </a>
+                    </div>
+
+                    <div class="hero-socials" id="hero-socials"></div>
                 </div>
-                <div id="hero-socials" class="hero-socials"></div>
-            </div>
-            <div class="hero-image-container">
-                <div id="hero-photo-wrapper" class="photo-wrapper">
-                    <!-- Image injected by JS -->
-                    <div class="avatar-placeholder">?</div>
+
+                <div class="hero-portrait-wrap">
+                    <div class="portrait-card" id="hero-photo-wrapper">
+                        <div class="portrait-image-container">
+                            <div class="avatar-fallback">
+                                <i class="fa-solid fa-user-tie"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container hidden-section">
-            <h2 class="section-title"><span>01.</span> About Me</h2>
-            <div class="about-grid">
-                <div class="about-text-content">
-                    <p id="about-desc">Loading...</p>
-                    <div id="about-info-grid" class="info-grid"></div>
+        <!-- About Section -->
+        <section id="about" class="section section-about">
+            <div class="container">
+                <div class="section-label">
+                    <span class="num">01</span>
+                    <span class="sep">/</span>
+                    <span class="title">About</span>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-narrative">
+                        <h2 class="about-quote">
+                            "Building software where correctness, scale, and clinical reliability truly matter."
+                        </h2>
+                        <p id="about-desc" class="about-body">
+                            Software Engineer at Symbian Health, building cloud-native healthcare platforms on AWS — spanning serverless microservices, DICOM radiology systems, AI-powered medical document pipelines, and LLM-driven chatbots with AWS Bedrock. Pursuing M.Tech in Software Engineering at AMU with research in Hybrid RAG systems.
+                        </p>
+                    </div>
+
+                    <div class="about-details-card">
+                        <div class="details-list" id="about-info-grid"></div>
+                        <div class="cert-highlight-box">
+                            <div class="cert-gold-icon"><i class="fa-brands fa-aws"></i></div>
+                            <div>
+                                <h4 class="cert-title">AWS Certified Solutions Architect</h4>
+                                <p class="cert-desc">Associate &bull; Scalable & High-Availability Cloud</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-        <div class="container hidden-section">
-            <h2 class="section-title"><span>02.</span> Skills & Tools</h2>
-            <div id="skills-container" class="skills-wrapper"></div>
-        </div>
-    </section>
+        <!-- Experience Section -->
+        <section id="experience" class="section section-experience">
+            <div class="container">
+                <div class="section-label">
+                    <span class="num">02</span>
+                    <span class="sep">/</span>
+                    <span class="title">Career</span>
+                </div>
+                <h2 class="section-heading">Professional Experience</h2>
 
-    <!-- Experience Section -->
-    <section id="experience" class="section">
-        <div class="container hidden-section">
-            <h2 class="section-title"><span>03.</span> Experience</h2>
-            <div id="experience-timeline" class="timeline"></div>
-        </div>
-    </section>
+                <div class="luxury-timeline" id="experience-timeline"></div>
+            </div>
+        </section>
 
-    <!-- Education Section -->
-    <section id="education" class="section">
-        <div class="container hidden-section">
-            <h2 class="section-title"><span>04.</span> Education</h2>
-            <div id="education-timeline" class="timeline"></div>
-        </div>
-    </section>
+        <!-- Selected Projects Section -->
+        <section id="projects" class="section section-projects">
+            <div class="container">
+                <div class="projects-header-row">
+                    <div>
+                        <div class="section-label">
+                            <span class="num">03</span>
+                            <span class="sep">/</span>
+                            <span class="title">Portfolio</span>
+                        </div>
+                        <h2 class="section-heading">Featured Projects</h2>
+                    </div>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-        <div class="container hidden-section">
-            <h2 class="section-title"><span>05.</span> Featured Projects</h2>
-            <div id="projects-grid" class="projects-grid"></div>
-        </div>
-    </section>
+                    <!-- Category Tabs -->
+                    <div class="luxury-tabs" id="project-filters" role="tablist">
+                        <button class="luxury-tab active" data-filter="all">All</button>
+                        <button class="luxury-tab" data-filter="cloud">Cloud / AWS</button>
+                        <button class="luxury-tab" data-filter="ai">AI / RAG</button>
+                        <button class="luxury-tab" data-filter="mobile">Mobile</button>
+                    </div>
+                </div>
 
-    <!-- Research Section -->
-    <section id="research" class="section">
-        <div class="container hidden-section">
-            <h2 class="section-title"><span>06.</span> Research</h2>
-            <div id="research-grid" class="research-list"></div>
-        </div>
-    </section>
+                <div class="luxury-projects-grid" id="projects-grid"></div>
+            </div>
+        </section>
 
-    <!-- Documents Section -->
-    <section id="documents" class="section">
-        <div class="container hidden-section">
-            <h2 class="section-title"><span>07.</span> Downloads</h2>
-            <div id="documents-grid" class="docs-grid"></div>
-        </div>
-    </section>
+        <!-- Skills & Expertise Section -->
+        <section id="skills" class="section section-skills">
+            <div class="container">
+                <div class="section-label">
+                    <span class="num">04</span>
+                    <span class="sep">/</span>
+                    <span class="title">Expertise</span>
+                </div>
+                <h2 class="section-heading">Skills & Technologies</h2>
 
-    <!-- Custom Sections -->
-    <div id="custom-sections-wrapper"></div>
+                <div class="luxury-skills-grid" id="skills-container"></div>
+            </div>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section text-center">
-        <div class="container hidden-section">
-            <p class="accent-text">What's Next?</p>
-            <h2 class="big-heading">Get In Touch</h2>
-            <p class="contact-text">
-                My inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get
-                back to you!
-            </p>
-            <a href="" id="contact-email-btn" class="btn btn-primary big-btn">Say Hello</a>
-            <div id="contact-socials" class="social-links-large"></div>
-        </div>
-    </section>
+        <!-- Education Section -->
+        <section id="education" class="section section-education">
+            <div class="container">
+                <div class="section-label">
+                    <span class="num">05</span>
+                    <span class="sep">/</span>
+                    <span class="title">Academics</span>
+                </div>
+                <h2 class="section-heading">Education</h2>
+
+                <div class="luxury-timeline" id="education-timeline"></div>
+            </div>
+        </section>
+
+        <!-- Research Section -->
+        <section id="research" class="section section-research">
+            <div class="container">
+                <div class="section-label">
+                    <span class="num">06</span>
+                    <span class="sep">/</span>
+                    <span class="title">Publications</span>
+                </div>
+                <h2 class="section-heading">Research & Papers</h2>
+
+                <div class="luxury-research-grid" id="research-grid"></div>
+            </div>
+        </section>
+
+        <!-- Custom Sections (Dynamic) -->
+        <div id="custom-sections-wrapper"></div>
+
+        <!-- Documents Section -->
+        <section id="documents" class="section section-documents">
+            <div class="container">
+                <div class="section-label">
+                    <span class="num">07</span>
+                    <span class="sep">/</span>
+                    <span class="title">Assets</span>
+                </div>
+                <h2 class="section-heading">Documents & Downloads</h2>
+
+                <div class="luxury-docs-grid" id="documents-grid"></div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section section-contact">
+            <div class="container">
+                <div class="luxury-contact-card">
+                    <div class="contact-eyebrow">Initiate Contact</div>
+                    <h2 class="contact-heading">Interested in collaborating or discussing high-impact engineering?</h2>
+                    <p class="contact-description">
+                        Feel free to reach out directly. I'm always open to discussing distributed systems, AI architectures, or full-time opportunities.
+                    </p>
+
+                    <div class="contact-actions-row">
+                        <a href="mailto:ahmadbilal.199822@gmail.com" id="contact-email-btn" class="btn btn-luxury-primary">
+                            <i class="fa-regular fa-envelope"></i> Send an Email
+                        </a>
+                        <a href="https://github.com/AngryFalcon89" target="_blank" rel="noopener" class="btn btn-luxury-outline">
+                            <i class="fa-brands fa-github"></i> GitHub Profile
+                        </a>
+                    </div>
+
+                    <div class="contact-social-pills" id="contact-socials"></div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer>
-        <p id="footer-copy">&copy; 2025 Ahmad Bilal Zaidi.</p>
-        <a href="#" id="footer-admin-link" class="tiny-link">Admin System</a>
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <p class="footer-copy" id="footer-copy">&copy; 2026 Ahmad Bilal Zaidi. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#hero" class="back-to-top">Back to top &uarr;</a>
+                <a href="#" id="footer-admin-link" class="admin-portal-link">
+                    <i class="fa-solid fa-shield-halved"></i> Admin CMS
+                </a>
+            </div>
+        </div>
     </footer>
 
-    <!-- ADMIN MODAL (Login) -->
-    <div id="login-modal" class="modal">
-        <div class="login-box">
-            <span class="close-modal">&times;</span>
-            <h3>Admin Access</h3>
-            <p style="color:var(--color-text-muted); font-size:0.9rem; margin-bottom:1rem;">Authorized personnel only
-            </p>
-            <input type="text" id="admin-user" placeholder="Username">
-            <input type="password" id="admin-pass" placeholder="Password">
-            <button id="do-login-btn" class="btn btn-primary" style="width:100%">Login</button>
-            <p id="login-error" class="error-msg"></p>
+    <!-- Toast Notification -->
+    <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+    <!-- ADMIN MODAL -->
+    <div id="login-modal" class="modal" role="dialog" aria-modal="true">
+        <div class="luxury-modal-box">
+            <button class="close-modal" aria-label="Close modal">&times;</button>
+            <div class="modal-header">
+                <i class="fa-solid fa-lock modal-lock-icon"></i>
+                <h3 class="modal-title">Admin Portal</h3>
+                <p class="modal-subtitle">Authorized credentials required</p>
+            </div>
+            <form id="admin-login-form" onsubmit="return false;">
+                <div class="luxury-form-group">
+                    <label for="admin-user">Username</label>
+                    <input type="text" id="admin-user" class="luxury-input" placeholder="Enter username" autocomplete="username" required>
+                </div>
+                <div class="luxury-form-group">
+                    <label for="admin-pass">Password</label>
+                    <input type="password" id="admin-pass" class="luxury-input" placeholder="Enter password" autocomplete="current-password" required>
+                </div>
+                <button type="submit" id="do-login-btn" class="btn btn-luxury-primary btn-full">
+                    <span>Login</span>
+                </button>
+                <p id="login-error" class="error-text" role="alert"></p>
+            </form>
         </div>
     </div>
 
-    <!-- ADMIN PANEL -->
-    <div id="admin-dashboard" class="admin-panel">
+    <!-- ADMIN DASHBOARD PANEL -->
+    <div id="admin-dashboard" class="admin-panel" role="dialog" aria-modal="true">
         <div class="admin-header">
-            <h2>Dashboard</h2>
+            <div class="admin-title-group">
+                <i class="fa-solid fa-sliders"></i>
+                <h2>Portfolio Management CMS</h2>
+            </div>
             <div class="admin-actions">
-                <button id="save-data-btn" class="btn btn-sm btn-success"><i class="fa-solid fa-cloud"></i>
-                    Save</button>
-                <button id="save-theme-btn" class="btn btn-sm btn-outline"><i class="fa-solid fa-palette"></i>
-                    Theme</button>
-                <button id="logout-btn" class="btn btn-sm btn-danger">Exit</button>
+                <button id="save-data-btn" class="btn btn-sm btn-luxury-primary">
+                    <i class="fa-solid fa-cloud-arrow-up"></i> Save Content
+                </button>
+                <button id="save-theme-btn" class="btn btn-sm btn-luxury-outline">
+                    <i class="fa-solid fa-palette"></i> Save Theme
+                </button>
+                <button id="logout-btn" class="btn btn-sm btn-danger">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i> Exit
+                </button>
             </div>
         </div>
 
-        <div class="admin-content">
+        <div class="admin-body">
             <div id="admin-status" class="admin-note" style="display:none;"></div>
 
-            <div class="admin-tabs">
-                <button class="tab-btn active" data-target="edit-profile">Profile</button>
-                <button class="tab-btn" data-target="edit-skills">Skills</button>
-                <button class="tab-btn" data-target="edit-exp">Exp</button>
-                <button class="tab-btn" data-target="edit-edu">Edu</button>
-                <button class="tab-btn" data-target="edit-projects">Projects</button>
-                <button class="tab-btn" data-target="edit-research">Research</button>
-                <button class="tab-btn" data-target="edit-custom">Custom</button>
-                <button class="tab-btn" data-target="edit-docs">Docs</button>
-                <button class="tab-btn" data-target="edit-theme">Theme</button>
+            <div class="admin-tabs" role="tablist">
+                <button class="tab-btn active" data-target="edit-profile"><i class="fa-solid fa-user"></i> Profile</button>
+                <button class="tab-btn" data-target="edit-skills"><i class="fa-solid fa-wand-magic-sparkles"></i> Skills</button>
+                <button class="tab-btn" data-target="edit-exp"><i class="fa-solid fa-briefcase"></i> Experience</button>
+                <button class="tab-btn" data-target="edit-edu"><i class="fa-solid fa-graduation-cap"></i> Education</button>
+                <button class="tab-btn" data-target="edit-projects"><i class="fa-solid fa-laptop-code"></i> Projects</button>
+                <button class="tab-btn" data-target="edit-research"><i class="fa-solid fa-book-open"></i> Research</button>
+                <button class="tab-btn" data-target="edit-custom"><i class="fa-solid fa-puzzle-piece"></i> Custom</button>
+                <button class="tab-btn" data-target="edit-docs"><i class="fa-solid fa-folder-open"></i> Docs</button>
+                <button class="tab-btn" data-target="edit-theme"><i class="fa-solid fa-palette"></i> Theme</button>
             </div>
 
-            <!-- Content injected by script.js -->
+            <!-- Content Panes -->
             <div id="edit-profile" class="tab-pane active"></div>
             <div id="edit-skills" class="tab-pane"></div>
             <div id="edit-exp" class="tab-pane"></div>
@@ -213,8 +352,8 @@
         </div>
     </div>
 
+    <!-- Core App Logic -->
     <script src="script.js"></script>
-
 </body>
 
 </html>
